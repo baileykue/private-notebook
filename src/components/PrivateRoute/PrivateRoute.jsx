@@ -4,13 +4,15 @@ import { useUser } from '../../context/UserContext';
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
 export default function PrivateRoute({ children, ...rest }) {
-  const { user } = useUser();
+  const {
+    user: { email },
+  } = useUser();
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        user ? (
+        email ? (
           children
         ) : (
           <Redirect
