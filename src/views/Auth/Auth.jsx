@@ -24,10 +24,6 @@ export default function Auth({ isSigningUp = false }) {
       throw error;
     }
   };
-  // TODO: Implement sign up & sign
-  // Use isSigningUp to determine whether to sign up or sign in a user
-  // If signing in: set the user ({id, email}) and redirect to /notes
-  // Use the corresponding functions from `/services/users` for both cases
 
   return (
     <section className={styles.authForm}>
